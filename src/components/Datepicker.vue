@@ -1,5 +1,6 @@
 <template>
-  <div class="vdp-datepicker" :class="[wrapperClass, isRtl ? 'rtl' : '']">
+  <div class="vdp-datepicker beachbanners-vpd-datepicker" :class="[wrapperClass, isRtl ? 'rtl' : '']">
+    <label :class="computedLabelClass">{{labelText}}</label>
     <date-input
       :selectedDate="selectedDate"
       :resetTypedDate="resetTypedDate"
@@ -157,7 +158,8 @@ export default {
     maximumView: {
       type: String,
       default: 'year'
-    }
+    },
+    labelText: String
   },
   data () {
     const startDate = this.openDate ? new Date(this.openDate) : new Date()
@@ -187,7 +189,8 @@ export default {
        */
       calendarHeight: 0,
       resetTypedDate: new Date(),
-      utils: constructedDateUtils
+      utils: constructedDateUtils,
+      labelClass: ''
     }
   },
   watch: {
@@ -211,6 +214,10 @@ export default {
     },
     pageDate () {
       return new Date(this.pageTimestamp)
+    },
+
+    computedLabelClass () {
+      return this.labelClass
     },
 
     translation () {

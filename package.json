@@ -33,8 +33,6 @@
     "prepublishOnly": "yarn build"
   },
   "pre-commit": [
-    "lint",
-    "test"
   ],
   "dependencies": {},
   "peerDependencies": {

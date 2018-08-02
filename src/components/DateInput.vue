@@ -25,6 +25,7 @@
       @click="showCalendar"
       @keydown="allowTyping"
       @keyup="parseTypedDate"
+      @focus="inputFocused"
       @blur="inputBlurred"
       autocomplete="off">
     <!-- Clear Button -->
@@ -41,6 +42,9 @@
 <script>
 import { makeDateUtils } from '../utils/DateUtils'
 export default {
+  created: function () {
+    this.$parent.labelClass = this.selectedDate ? 'active' : ''
+  },
   props: {
     selectedDate: Date,
     resetTypedDate: [Date],
@@ -94,6 +98,7 @@ export default {
       }
       return this.inputClass
     }
+
   },
   watch: {
     resetTypedDate () {
@@ -137,15 +142,22 @@ export default {
         }
       }
     },
+    inputFocused (e) {
+      this.$parent.labelClass = 'active'
+    },
     /**
      * nullify the typed date to defer to regular formatting
      * called once the input is blurred
      */
-    inputBlurred () {
+    inputBlurred (e) {
       if (this.typeable && isNaN(Date.parse(this.input.value))) {
         this.clearDate()
         this.input.value = null
         this.typedDate = null
+      }
+
+      if (String(e.target.value).length === 0) {
+        this.$parent.labelClass = ''
       }
 
       this.$emit('closeCalendar')
