@@ -45,8 +45,7 @@ export default {
   created: function () {
     if (this.selectedDate !== null && String(this.selectedDate) > 0) {
       this.$parent.labelClass = 'active'
-    }
-    else {
+    } else {
       this.$parent.labelClass = ''
     }
   },
