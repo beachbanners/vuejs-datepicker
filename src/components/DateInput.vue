@@ -43,7 +43,12 @@
 import { makeDateUtils } from '../utils/DateUtils'
 export default {
   created: function () {
-    this.$parent.labelClass = this.selectedDate ? 'active' : ''
+    if (this.selectedDate !== null && String(this.selectedDate) > 0) {
+      this.$parent.labelClass = 'active'
+    }
+    else {
+      this.$parent.labelClass = ''
+    }
   },
   props: {
     selectedDate: Date,
