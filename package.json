@@ -8,13 +8,7 @@
     "date-picker",
     "calendar"
   ],
-  "main": "dist/vuejs-datepicker.js",
-  "module": "dist/vuejs-datepicker.esm.js",
-  "unpkg": "dist/vuejs-datepicker.min.js",
-  "files": [
-    "src",
-    "dist"
-  ],
+  "main": "dist/vuejs-datepicker.esm.js",
   "author": "Charlie Kassel <ck@charliekassel.com>",
   "repository": {
     "type": "git",
@@ -32,8 +26,6 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs",
     "prepublishOnly": "yarn build"
   },
-  "pre-commit": [
-  ],
   "dependencies": {},
   "peerDependencies": {
     "vue": "^2.3.0"
@@ -68,7 +60,6 @@
     "opn": "^4.0.2",
     "ora": "^1.2.0",
     "parse5": "^2.1.0",
-    "pre-commit": "^1.2.2",
     "rimraf": "^2.6.0",
     "rollup": "^0.57.1",
     "rollup-plugin-buble": "^0.19.2",
