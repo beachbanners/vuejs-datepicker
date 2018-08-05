@@ -1503,6 +1503,11 @@ var Datepicker = {render: function(){var _vm=this;var _h=_vm.$createElement;var 
       }
     }
   },
+  created: function created () {
+    if (this.value) {
+      this.labelClass = 'active';
+    }
+  },
   mounted: function mounted () {
     this.init();
   }

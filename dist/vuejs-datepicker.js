@@ -1507,6 +1507,11 @@
         }
       }
     },
+    created: function created () {
+      if (this.value) {
+        this.labelClass = 'active';
+      }
+    },
     mounted: function mounted () {
       this.init();
     }

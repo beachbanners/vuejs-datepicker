@@ -467,6 +467,11 @@ export default {
       }
     }
   },
+  created () {
+    if (this.value) {
+      this.labelClass = 'active'
+    }
+  },
   mounted () {
     this.init()
   }
