@@ -1501,15 +1501,11 @@
       init: function init () {
         if (this.value) {
           this.setValue(this.value);
+          this.labelClass = 'active';
         }
         if (this.isInline) {
           this.setInitialView();
         }
-      }
-    },
-    created: function created () {
-      if (this.value) {
-        this.labelClass = 'active';
       }
     },
     mounted: function mounted () {

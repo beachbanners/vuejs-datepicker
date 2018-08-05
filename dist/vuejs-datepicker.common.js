@@ -1497,15 +1497,11 @@ var Datepicker = {render: function(){var _vm=this;var _h=_vm.$createElement;var 
     init: function init () {
       if (this.value) {
         this.setValue(this.value);
+        this.labelClass = 'active';
       }
       if (this.isInline) {
         this.setInitialView();
       }
-    }
-  },
-  created: function created () {
-    if (this.value) {
-      this.labelClass = 'active';
     }
   },
   mounted: function mounted () {

@@ -461,15 +461,11 @@ export default {
     init () {
       if (this.value) {
         this.setValue(this.value)
+        this.labelClass = 'active'
       }
       if (this.isInline) {
         this.setInitialView()
       }
-    }
-  },
-  created () {
-    if (this.value) {
-      this.labelClass = 'active'
     }
   },
   mounted () {
